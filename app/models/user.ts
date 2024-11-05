@@ -6,6 +6,7 @@ import Comment from './comment.js'
 import Reaction from './reaction.js'
 import CommentReaction from './comment_reaction.js'
 import CommentReply from './comment_reply.js'
+import { DbAccessTokensProvider } from '@adonisjs/auth/access_tokens'
 
 export default class User extends BaseModel {
   public serializeExtras = true
@@ -58,4 +59,6 @@ export default class User extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime | null
+
+  static accessTokens = DbAccessTokensProvider.forModel(User)
 }

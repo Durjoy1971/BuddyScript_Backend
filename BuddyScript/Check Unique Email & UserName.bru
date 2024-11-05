@@ -1,0 +1,18 @@
+meta {
+  name: Check Unique Email & UserName
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3333/validateEmailUserName
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  "email" : "Task1@gmail.com",
+  "userName": "Task1@gmail.com"
+  }
+}

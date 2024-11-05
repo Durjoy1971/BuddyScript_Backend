@@ -1,0 +1,17 @@
+meta {
+  name: Fetch All Comment
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:3333/fetchAllComment
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "postId":1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "BuddyScript",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

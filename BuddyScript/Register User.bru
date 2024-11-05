@@ -1,0 +1,20 @@
+meta {
+  name: Register User
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3333/registerUser
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "userName": "Tester",
+      "picURL": "https://i.pravatar.cc/48?u=Tester",
+      "password": "Tester",
+      "email": "Tester@gmail.com"
+    }
+}
