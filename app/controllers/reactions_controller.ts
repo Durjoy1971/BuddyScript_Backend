@@ -18,4 +18,33 @@ export default class ReactionsController {
     }
     return response.status(201).send(reactions)
   }
+
+  async add({ request, response }: HttpContext) {
+    const { currentUserId, postId } = request.all()
+
+    if (!currentUserId || !postId) {
+      console.log(request.all())
+      return response.status(400).send('Missing required fields')
+    }
+
+    const reactions = await Reaction.query()
+      .where('postId', postId)
+      .where('userId', currentUserId)
+      .first()
+
+    if (reactions) {
+      reactions.delete()
+      return response.status(200).send({ success: false })
+    } else {
+      const newReaction = await Reaction.create({
+        postId,
+        userId: currentUserId,
+        reaction: 'love',
+      })
+      
+      console.log(newReaction)
+
+      return response.status(201).send({ success: true, reactionId: newReaction.id })
+    }
+  }
 }

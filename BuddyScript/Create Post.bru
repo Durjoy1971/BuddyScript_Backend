@@ -1,0 +1,20 @@
+meta {
+  name: Create Post
+  type: http
+  seq: 15
+}
+
+post {
+  url: http://localhost:3333/createPost
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "userId":20,
+    "imageURL":"https://picsum.photos/seed/gm23sey7L43YEjX79xfpu/600/400",
+    "content": "Nice NicerNicest"
+  }
+  
+}

@@ -50,6 +50,8 @@ export default class UsersController {
 
   async loginUser({ response, request, auth }: HttpContext) {
     const { email, password } = request.all()
+    console.log(email, password)
+
     if (!email || !password) {
       return response.status(400).send('Missing required fields')
     }
@@ -71,11 +73,13 @@ export default class UsersController {
   }
 
   async getUser({ response, auth }: HttpContext) {
+    console.log('Getting user')
     // return await auth.authenticate()
     return response.status(200).send(auth.use('web').user)
   }
 
   async logoutUser({ response, auth }: HttpContext) {
+    console.log('Logging out')
     await auth.use('web').logout()
     return response.status(200).send('Logged out')
   }

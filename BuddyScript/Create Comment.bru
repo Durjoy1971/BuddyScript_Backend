@@ -1,0 +1,19 @@
+meta {
+  name: Create Comment
+  type: http
+  seq: 14
+}
+
+post {
+  url: http://localhost:3333/createComment
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "currentUserId":20,
+    "postId":10,
+    "content":"Excellent coffee!"
+  }
+}

@@ -2,7 +2,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 import Comment from "#models/comment"
 
-export default class CommentsController {
+export default class CommentReactionController {
     public async fetch({ request, response }: HttpContext) {
         const { postId } = request.all()
         if (!postId) {
@@ -40,6 +40,3 @@ export default class CommentsController {
         return response.status(201).send({ success: true, newComment})
     }
 }
-// currentUserId = 19
-// postId = 10
-// content = "Excellent post!"

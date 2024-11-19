@@ -1,0 +1,19 @@
+meta {
+  name: Create Reply To Comment
+  type: http
+  seq: 18
+}
+
+post {
+  url: http://localhost:3333/createCommentReply
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "commentId":51,
+    "userId":32,
+    "content": "Testing Reply 2025"
+  }
+}

@@ -1,0 +1,18 @@
+meta {
+  name: Update Post
+  type: http
+  seq: 16
+}
+
+post {
+  url: http://localhost:3333/updatePost
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "postId":17,
+    "content": "Swimming"
+  }
+}
